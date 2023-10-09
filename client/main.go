@@ -6,12 +6,15 @@ import (
 	"net/http"
 )
 
-const helloPath string = "http://localhost:8080/hello"
+const (
+	helloPath string = "http://localhost:8080/hello"
+	countPath string = "http://localhost:8080/count"
+)
 
 func main() {
 
 	var client http.Client
-	resp, err := client.Get(helloPath)
+	resp, err := client.Get(countPath)
 	if err != nil {
 		fmt.Println(err.Error())
 		return
